@@ -47,12 +47,14 @@ color:#aaa;
 }
 
 .btn-primary{
-background:#444;
+background:#ffffff;
+color: #000000;
 border:none;
 }
 
 .btn-primary:hover{
-background:#666;
+background:#000000;
+
 }
 
 .section{
@@ -121,4 +123,14 @@ ul{
                       radial-gradient(2px 2px at 90px 40px, white, transparent),
                       radial-gradient(1px 1px at 130px 80px, white, transparent);
     background-size:200px 200px;
+}
+.no-rounded {
+  border-radius: 0;
+}
+.no-rounded img {
+  border-radius: 0;
+  box-shadow:0 2px 7px #000000;
+}
+.custom-bg{
+  background-color: #0f0f0f;
 }
