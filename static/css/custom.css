@@ -124,3 +124,13 @@ ul{
   color: #fdfffc;
   font-size: 4rem;
 }
+.custom-table th{
+  background-color: rgb(0, 0, 0);
+  color: #fdfffc;
+}
+.table-wrapper {
+  max-width: 900px;     
+  margin: 0 auto;        
+  padding: 0 15px;       
+  overflow-x: auto;      
+}
