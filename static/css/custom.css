@@ -3,7 +3,7 @@
 body{
 background:black;
 color:#12100e;
-font-family:'Times New Roman', Times, serif;
+font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -119,4 +119,8 @@ ul{
 }
 .custom-txt{
   color: #fdfffc;
+}
+.custom-txt2 h1{
+  color: #fdfffc;
+  font-size: 4rem;
 }
