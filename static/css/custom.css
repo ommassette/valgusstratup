@@ -3,23 +3,26 @@
 body{
 background:black;
 color:#12100e;
-font-family:Georgia, 'Times New Roman', Times, serif;
+font-family: 'Roboto', sans-serif;
 }
-
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
 
 .navbar{
 background:black;
 }
 
-.hero{
-  position:relative;
-  height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fdfffc;
-  background:url(../images/VALGUS.png) center/cover no-repeat;
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fdfffc;
+
+  background: url(../images/VALGUS.png) center/cover no-repeat;
   background-size: contain;
 }
 
@@ -61,11 +64,9 @@ background:#000000;
 .section{
 padding:80px 0;
 }
-
 .card{
-background:#1b1b1b;
-border:none;
-color:#ddd;
+  background: rgba(27,27,27,0.75);
+  backdrop-filter: blur(6px);
 }
 
 .portfolio img{
@@ -133,4 +134,72 @@ ul{
   margin: 0 auto;        
   padding: 0 15px;       
   overflow-x: auto;      
+}
+.cus-bg{
+  background-color: #fdfffc;
+}
+.led-bg {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+/* SOFT MOVING LIGHT (no lines at all) */
+.led-bg::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(0, 150, 255, 0.12) 50%,
+        transparent 70%
+    );
+
+    filter: blur(80px); /* 🔥 BIG blur = real glow */
+    animation: glowMove 12s linear infinite;
+}
+
+/* SECOND LIGHT LAYER (depth) */
+.led-bg::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+
+    background: linear-gradient(
+  120deg,
+  transparent 30%,
+  rgba(0,150,255,0.15) 50%,
+  rgba(255,0,150,0.12) 60%,
+  transparent 70%
+);
+
+    filter: blur(100px);
+    animation: glowMoveReverse 18s linear infinite;
+}
+
+/* animations */
+@keyframes glowMove {
+    from {
+        transform: translateX(-30%) translateY(-30%);
+    }
+    to {
+        transform: translateX(30%) translateY(30%);
+    }
+}
+
+@keyframes glowMoveReverse {
+    from {
+        transform: translateX(30%) translateY(-30%);
+    }
+    to {
+        transform: translateX(-30%) translateY(30%);
+    }
+}
+
+/* keep content above */
+.led-bg > * {
+    position: relative;
+    z-index: 2;
 }
